@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize')
 const connection = require('../database/database')
+const UserTkn = require('../userTkn/userTkn')
 
 const User = connection.define('users', {
     name: {
@@ -16,6 +17,9 @@ const User = connection.define('users', {
     }
 })
 
-User.sync({ force: true })
+User.belongTo(UserTkn)
+UserTkn.belongTo(User)
+
+//User.sync({ force: true })
 
 module.exports = User
