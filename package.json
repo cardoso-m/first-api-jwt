@@ -1,8 +1,12 @@
 {
   "dependencies": {
     "express": "^4.21.0",
+    "json": "^11.0.0",
+    "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.11.3",
-    "sequelize": "^6.37.4"
+    "sequelize": "^6.37.4",
+    "token": "^0.1.0",
+    "web": "^0.0.2"
   },
   "name": "first-api-jwt",
   "version": "1.0.0",
