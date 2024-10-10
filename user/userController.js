@@ -42,12 +42,16 @@ router.post('/auth', (req, res) => {
                     res.status(400)
                     res.json({ err: 'Falhou' })
                 } else {
-                    res.status(200)
-                    res.json({ tkn: tkn })
+                    User.update({ usersTknId: tkn }, {
+                        where: { id: user.id }
+                    }).then(() => {
+                        res.status(200)
+                        res.send('Inserido com sucesso')
+                    }).catch(
+                        res.status(400)
+                    )
                 }
             })
-            //res.status(200)
-            //res.send('Logado!')
         } else {
             res.status(400)
             res.send('Credenciais incorretas!')
