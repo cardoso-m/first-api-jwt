@@ -17,8 +17,8 @@ const User = connection.define('users', {
     }
 })
 
-User.belongTo(UserTkn)
-UserTkn.belongTo(User)
+User.belongsTo(UserTkn)
+UserTkn.belongsTo(User)
 
 //User.sync({ force: true })
 

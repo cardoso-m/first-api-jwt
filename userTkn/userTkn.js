@@ -8,6 +8,6 @@ const UserTkn = connection.define('users_tkn', {
     }
 })
 
-UserTkn.sync({ force: true })
+//UserTkn.sync({ force: true })
 
 module.exports = UserTkn
